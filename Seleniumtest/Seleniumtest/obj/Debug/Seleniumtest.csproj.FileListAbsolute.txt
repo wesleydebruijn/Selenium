@@ -1,0 +1,10 @@
+c:\users\marvin\documents\visual studio 2015\Projects\Seleniumtest\Seleniumtest\bin\Debug\Seleniumtest.exe.config
+c:\users\marvin\documents\visual studio 2015\Projects\Seleniumtest\Seleniumtest\bin\Debug\Seleniumtest.exe
+c:\users\marvin\documents\visual studio 2015\Projects\Seleniumtest\Seleniumtest\bin\Debug\Seleniumtest.pdb
+c:\users\marvin\documents\visual studio 2015\Projects\Seleniumtest\Seleniumtest\bin\Debug\WebDriver.dll
+c:\users\marvin\documents\visual studio 2015\Projects\Seleniumtest\Seleniumtest\bin\Debug\WebDriver.Support.dll
+c:\users\marvin\documents\visual studio 2015\Projects\Seleniumtest\Seleniumtest\bin\Debug\WebDriver.xml
+c:\users\marvin\documents\visual studio 2015\Projects\Seleniumtest\Seleniumtest\bin\Debug\WebDriver.Support.xml
+c:\users\marvin\documents\visual studio 2015\Projects\Seleniumtest\Seleniumtest\obj\Debug\Seleniumtest.csprojResolveAssemblyReference.cache
+c:\users\marvin\documents\visual studio 2015\Projects\Seleniumtest\Seleniumtest\obj\Debug\Seleniumtest.exe
+c:\users\marvin\documents\visual studio 2015\Projects\Seleniumtest\Seleniumtest\obj\Debug\Seleniumtest.pdb
