@@ -1,28 +1,23 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+using Microsoft.VisualStudio.TestTools.UnitTesting;
 using OpenQA.Selenium;
 using OpenQA.Selenium.Chrome;
 using OpenQA.Selenium.Firefox;
-using NUnit.Framework;
 
-
-namespace Seleniumtest
+namespace SeleniumUnitTest
 {
-    [TestFixture]
-    class Program
+    [TestClass]
+    public class SeleniumTest
     {
         private IWebDriver driver;
 
-        [SetUp]
+        [TestInitialize]
         public void SetUp()
         {
-            IWebDriver driver = new ChromeDriver();
+            driver = new ChromeDriver();
         }
 
-        [Test]
+        [TestMethod]
         public void TestAddCountry()
         {
             // go to url
@@ -41,7 +36,7 @@ namespace Seleniumtest
             // List<IWebElement> countryList = driver.FindElement(By.Id("countryList")).FindElements(By.TagName("li")).ToList();
         }
 
-        [TearDown]
+        [TestCleanup]
         public void TearDown()
         {
             driver.Quit();

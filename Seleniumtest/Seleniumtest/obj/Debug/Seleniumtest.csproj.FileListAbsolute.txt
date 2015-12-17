@@ -8,3 +8,15 @@ c:\users\marvin\documents\visual studio 2015\Projects\Seleniumtest\Seleniumtest\
 c:\users\marvin\documents\visual studio 2015\Projects\Seleniumtest\Seleniumtest\obj\Debug\Seleniumtest.csprojResolveAssemblyReference.cache
 c:\users\marvin\documents\visual studio 2015\Projects\Seleniumtest\Seleniumtest\obj\Debug\Seleniumtest.exe
 c:\users\marvin\documents\visual studio 2015\Projects\Seleniumtest\Seleniumtest\obj\Debug\Seleniumtest.pdb
+C:\wamp\www\Selenium\Seleniumtest\Seleniumtest\bin\Debug\WebDriver.dll
+C:\wamp\www\Selenium\Seleniumtest\Seleniumtest\bin\Debug\WebDriver.Support.dll
+C:\wamp\www\Selenium\Seleniumtest\Seleniumtest\bin\Debug\WebDriver.xml
+C:\wamp\www\Selenium\Seleniumtest\Seleniumtest\bin\Debug\WebDriver.Support.xml
+C:\wamp\www\Selenium\Seleniumtest\Seleniumtest\obj\Debug\Seleniumtest.csprojResolveAssemblyReference.cache
+C:\wamp\www\Selenium\Seleniumtest\Seleniumtest\bin\Debug\SeleniumNUnit.dll.config
+C:\wamp\www\Selenium\Seleniumtest\Seleniumtest\bin\Debug\SeleniumNUnit.dll
+C:\wamp\www\Selenium\Seleniumtest\Seleniumtest\bin\Debug\SeleniumNUnit.pdb
+C:\wamp\www\Selenium\Seleniumtest\Seleniumtest\bin\Debug\nunit.framework.dll
+C:\wamp\www\Selenium\Seleniumtest\Seleniumtest\bin\Debug\nunit.framework.xml
+C:\wamp\www\Selenium\Seleniumtest\Seleniumtest\obj\Debug\SeleniumNUnit.dll
+C:\wamp\www\Selenium\Seleniumtest\Seleniumtest\obj\Debug\SeleniumNUnit.pdb
