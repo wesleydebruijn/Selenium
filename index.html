@@ -1,31 +1,37 @@
 <!doctype html>
 <html ng-app="todoApp">
   <head>
-    <script src="http://code.jquery.com/jquery-2.1.4.min.js"></script>
-    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.4/angular.min.js"></script>
-    <script src="todo.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.5/css/materialize.min.css">
     <link rel="stylesheet" href="todo.css">
   </head>
   <body>
-
     <div ng-controller="TodoListController as todoList">
+        <div class="container">
 
-	<h1>{{todoList.naam}}</h1>
-	<h2>Bucket list countries</h2>
-      <span>{{todoList.remaining()}} of {{todoList.todos.length}} remaining</span>
-      [ <a href="" ng-click="todoList.archive()">archive</a> ]
-      <ul class="unstyled" id="countryList">
-        <li ng-repeat="todo in todoList.todos">
-          <input type="checkbox" ng-model="todo.done">
-          <span class="done-{{todo.done}}">{{todo.text}}</span>
-        </li>
-      </ul>
-      <form ng-submit="todoList.addTodo()">
-        <input type="text" ng-model="todoList.todoText"  size="30"
-               placeholder="add new country here" id="addCountryInput">
-        <input class="btn-primary" type="submit" value="add">
-      </form>
+          <div class="row">
+            <div class="col l12">
+              <div class="card-panel">
+                <h1>{{todoList.naam}}</h1>
+                <span><span class="remaining-todos">{{todoList.remaining()}}</span> of <span class="total-todos">{{todoList.todos.length}}</span> remaining</span>
+                [ <a href="" class="archive" ng-click="todoList.archive()">archive</a> ]
+                 <ul class="unstyled" id="list">
+                   <li ng-repeat="todo in todoList.todos">
+                     <input type="checkbox" ng-model="todo.done" id="item-{{ $index }}">
+                     <label class="done-{{todo.done}}" for="item-{{ $index }}">{{todo.text}}</label>
+                   </li>
+                 </ul>
+                 <input type="text" ng-model="todoList.todoText"  size="30" placeholder="add new country here" id="country">
+                 <span class="waves-effect waves-light btn-large green" ng-click="todoList.addTodo()">add</span>
+              </div>
+            </div>
 
+          </div>
+      </div>
     </div>
+
+    <script src="http://code.jquery.com/jquery-2.1.4.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.4/angular.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.5/js/materialize.min.js"></script>
+    <script src="todo.js"></script>
   </body>
 </html>

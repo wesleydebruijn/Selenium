@@ -4,48 +4,83 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using OpenQA.Selenium;
+using OpenQA.Selenium.IE;
 using OpenQA.Selenium.Chrome;
 using OpenQA.Selenium.Firefox;
 using NUnit.Framework;
 
 namespace SeleniumNUnit
 {
-    [TestFixture]
-    public class TestClass
+    [TestFixture(typeof(InternetExplorerDriver))]
+    [TestFixture(typeof(ChromeDriver))]
+    public class TestClass<TWebDriver> where TWebDriver : IWebDriver, new()
     {
         private IWebDriver driver;
 
-        [SetUp]
-        public void SetUp()
+        [TestFixtureSetUp]
+        public void FixtureSetup()
         {
-            driver = new ChromeDriver();
+            driver = new TWebDriver();
+            driver.Navigate().GoToUrl("http://localhost/selenium-demo/");
         }
 
         [Test]
-        public void TestAddCountryTest()
+        public void AddCountryTest()
         {
-            // go to url
-            driver.Navigate().GoToUrl("http://localhost/Selenium/");
+            String country = "The Netherlands";
 
-            // get input by id selector
-            IWebElement input = driver.FindElement(By.Id("addCountryInput"));
+            // get and set input by id selector
+            IWebElement input = driver.FindElement(By.Id("country"));
+            input.SendKeys(country);
 
-            // add value to input
-            input.SendKeys("The Netherlands");
+            // get submit button by class name
+            IWebElement button = driver.FindElement(By.ClassName("btn-large"));
+            button.Click();
 
-            // get add button by class name
-            IWebElement addButton = driver.FindElement(By.ClassName("btn-primary"));
-            addButton.Click();
+            // get last added item
+            List<IWebElement> list = driver.FindElement(By.Id("list")).FindElements(By.TagName("li")).ToList();
+            String value = list.Last().Text;
 
-            // List<IWebElement> countryList = driver.FindElement(By.Id("countryList")).FindElements(By.TagName("li")).ToList();
-            Assert.IsTrue(true);
+            // check if last value is equal to added country
+            Assert.AreEqual(country, value);
         }
 
-        [TearDown]
-        public void TearDown()
+        [Test]
+        public void CheckCountryTest()
         {
-            driver.Quit();
-            driver.Dispose();
+            // get last added item and select checkbox
+            List<IWebElement> list = driver.FindElement(By.Id("list")).FindElements(By.TagName("li")).ToList();
+            IWebElement checkbox = list.Last().FindElement(By.TagName("input"));
+            IWebElement label = list.Last().FindElement(By.TagName("label"));
+            label.Click();
+
+            // check if checkbox is selected
+            Assert.IsTrue(checkbox.Selected);
+        }
+
+        [Test]
+        public void ArchiveTest()
+        {
+            // click on archive button
+            IWebElement archive = driver.FindElement(By.ClassName("archive"));
+            archive.Click();
+
+            // get values of todos
+            int total = Int32.Parse(driver.FindElement(By.ClassName("total-todos")).Text);
+            int remaining = Int32.Parse(driver.FindElement(By.ClassName("remaining-todos")).Text);
+
+            // check if total is equal to remaining
+            Assert.AreEqual(total, remaining);
+        }
+
+        [TestFixtureTearDown]
+        public void FixtureTearDown()
+        {
+            if (driver != null)
+            {
+                driver.Dispose();
+                driver.Quit();
+            }              
         }
     }
 }
